@@ -1,2 +1,2 @@
-# jslibrary
-javascript library
+# JS Library
+My JS Library
