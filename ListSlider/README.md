@@ -1,6 +1,6 @@
 # List Slider
 ### Example
-`code()`
+html
 ```html
 <div> <!-- container -->
   <ul> <!-- ul -->
@@ -10,6 +10,8 @@
   </ul>
 </div>
 ```
+
+javascript
 ```javascript
 function listSlide(container, ul, lists, direction/*left: 0, right: 1*/) {
 ...
