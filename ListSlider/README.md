@@ -4,7 +4,7 @@
 html
 ```html
 <head>
-  <link rel="stylesheet" type="text/css" href="{path}/slider.css"
+  <link rel="stylesheet" type="text/css" href="{path}/slider.css"/>
 </head>
 <div class="slidercontainer">
   <ul class="slider">
@@ -19,5 +19,5 @@ html
   </div>
 </div>
 ...
-<script type="text/javascript" src="{path}/slider.js"
+<script type="text/javascript" src="{path}/slider.js"></script>
 ```
