@@ -1,0 +1,12 @@
+.slidercontainer {
+	position: relative;
+	overflow: hidden;
+}
+.slider{
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.slide {
+	float: left;
+}
