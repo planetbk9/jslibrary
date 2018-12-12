@@ -1,19 +1,23 @@
-# List Slider
-### Example
+# My JS Library #
+## 1. Slider ##
+### Usage ###
 html
 ```html
-<div> <!-- container -->
-  <ul> <!-- ul -->
-    <li></li> <!-- start: lists -->
+<head>
+  <link rel="stylesheet" type="text/css" href="{path}/slider.css"
+</head>
+<div class="slidercontainer">
+  <ul class="slider">
+    <li class="slide"></li>
+    <li class="slide"></li>
     ...
-    <li></li> <!-- end: lists -->
-  </ul>
+    <li class="slide"></li>
+	</ul>
+  <div>
+    <button class="slideleft"></button>
+    <button class="slideright"></button>
+  </div>
 </div>
-```
-
-javascript
-```javascript
-function listSlide(container, ul, lists, direction/*left: 0, right: 1*/) {
 ...
-}
+<script type="text/javascript" src="{path}/slider.js"
 ```
