@@ -1,23 +1,18 @@
 # My JS Library #
-## 1. Slider ##
+## 2. BrickLayout ##
 ### Usage ###
 html
 ```html
 <head>
-  <link rel="stylesheet" type="text/css" href="{path}/slider.css"/>
+  <link rel="stylesheet" type="text/css" href="{path}/bricklayout.css"/>
 </head>
-<div class="slidercontainer">
-  <ul class="slider">
-    <li class="slide"></li>
-    <li class="slide"></li>
-    ...
-    <li class="slide"></li>
-	</ul>
-  <div>
-    <button class="slideleft"></button>
-    <button class="slideright"></button>
-  </div>
-</div>
 ...
-<script type="text/javascript" src="{path}/slider.js"></script>
+  <div class="brickcontainer">
+    <div class="brick-item">
+       <img src="..." />
+    </div>
+    ...
+  </div>
+...
+<script type="text/javascript" src="{path}/bricklayout.js"></script>
 ```
