@@ -1,0 +1,8 @@
+.brickcontainer {
+    position: relative;
+}
+.brickcontainer .brick-item {
+    position: absolute;
+    width: 25%;
+    vertical-align: baseline;
+}
