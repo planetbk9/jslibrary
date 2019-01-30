@@ -61,9 +61,8 @@
                 }
                 totHeight = Math.max(totHeight, posY[cand['x']]);
             });
+            container.style.height = totHeight + 'px';
         });
-
-        container.style.height = totHeight + 'px';
 
         function findColNum(container) {
             var item1 = container.getElementsByClassName('brick-item-1')[0];
