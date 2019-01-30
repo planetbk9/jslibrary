@@ -8,8 +8,11 @@ html
 </head>
 ...
   <div class="brickcontainer">
-    <div class="brick-item">
+    <div class="brick-item-common brick-item-1">
        <img src="..." />
+    </div>
+    <div class="brick-item-common brick-item-2">
+       ...
     </div>
     ...
   </div>
