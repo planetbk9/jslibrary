@@ -1,8 +1,13 @@
 .brickcontainer {
     position: relative;
 }
-.brickcontainer .brick-item {
+.brickcontainer .brick-item-common {
     position: absolute;
-    width: 25%;
     vertical-align: baseline;
+}
+.brickcontainer .brick-item-1 {
+    width: 25%;
+}
+.brickcontainer .brick-item-2 {
+    width: 50%;
 }
