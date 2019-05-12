@@ -26,7 +26,10 @@
         [].forEach.call(brickContainers, function (container) {
             var containerWidth = getComputedValue(container, 'width');
             var colNum = findColNum(container);
-            if (isNaN(colNum)) return;
+            if (isNaN(colNum)) {
+                container.height = 0 + 'px';
+                return;
+            }
             var posX = [];
             var posY = [];
             for (var i = 0; i < colNum; i++) {
@@ -45,23 +48,32 @@
                         x: i,
                         y: i
                     };
-                    if(i + brick.col > colNum) continue;
+                    if (i + brick.col > colNum) continue;
                     for (var j = 0; j < brick.col; j++) {
-                        if(posY[i+j] > posY[temp['y']]) {
+                        if (posY[i + j] > posY[temp['y']]) {
                             temp['x'] = i;
-                            temp['y'] = i+j;
+                            temp['y'] = i + j;
                         }
                     }
-                    if(posY[temp['y']] < posY[cand['y']]) cand = temp;
+                    if (posY[temp['y']] < posY[cand['y']]) cand = temp;
                 }
-                brick.style.left = posX[cand['x']] + 'px';
-                brick.style.top = posY[cand['y']] + 'px';
-                for(var i=0; i<brick.col; i++) {
-                    posY[i+cand['x']] = posY[i+cand['x']] + getComputedValue(brick, 'height');
+                brick.left = posX[cand['x']] + 'px';
+                brick.top = posY[cand['y']] + 'px';
+                for (var i = 0; i < brick.col; i++) {
+                    posY[i + cand['x']] = posY[i + cand['x']] + getComputedValue(brick, 'height');
                 }
                 totHeight = Math.max(totHeight, posY[cand['x']]);
             });
-            container.style.height = totHeight + 'px';
+            container.height = totHeight + 'px';
+        });
+
+        // Apply to DOM
+        [].forEach.call(brickContainers, function (container) {
+            container.style.height = container.height;
+            [].forEach.call(container.items, function (brick) {
+                brick.style.left = brick.left;
+                brick.style.top = brick.top;
+            });
         });
 
         function findColNum(container) {
@@ -72,10 +84,10 @@
         }
 
         function getComputedValue(elem, style) {
-            if(isIE) {
-                if(style === 'width') {
+            if (isIE) {
+                if (style === 'width') {
                     return parseFloat(window.getComputedStyle(elem).getPropertyValue('padding-left')) + parseFloat(window.getComputedStyle(elem).getPropertyValue('width')) + parseFloat(window.getComputedStyle(elem).getPropertyValue('padding-right'));
-                } else if(style === 'height') {
+                } else if (style === 'height') {
                     return parseFloat(window.getComputedStyle(elem).getPropertyValue('padding-top')) + parseFloat(window.getComputedStyle(elem).getPropertyValue('height')) + parseFloat(window.getComputedStyle(elem).getPropertyValue('padding-bottom'));
                 }
             }
